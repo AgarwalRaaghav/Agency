@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Anton&family=Space+Grotesk:wght@500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Anton", sans-serif;
+  --font-accent: "Space Grotesk", sans-serif;
+  
+  --color-brand-dark: #002B2B;
+  --color-brand-neon: #CCFF00;
+  --color-brand-cyan: #00F5D4;
+}
+
+@layer base {
+  body {
+    @apply bg-brand-dark text-white font-sans antialiased;
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+.paper-fold {
+  position: relative;
+}
+
+.paper-fold::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 20px 20px;
+  border-color: transparent transparent #002B2B transparent;
+  filter: drop-shadow(-2px -2px 2px rgba(0,0,0,0.1));
+}
+
+.paper-fold-white::after {
+  border-color: transparent transparent #002B2B #e5e7eb;
+}
+
+.paper-fold-neon::after {
+  border-color: transparent transparent #002B2B #bada00;
+}
+
+.paper-fold-cyan::after {
+  border-color: transparent transparent #002B2B #00d9bc;
+}
